@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Dynamic App</title>
+        <link rel="stylesheet" href="./styles/general_styles.css">
+        <script src="./action_it.js"></script>
+    </head>
+
+    <body onload="greet()">
+        <button onclick="alert('Hello Rebecca Alinda')">Click me</button> <!--inline javascript-->
+
+        <p id="text">This is my first HTML, CSS and Javacsript Fusion</p>
+        <button onclick="document.getElementById('text').innerHTML='I am testing inline javascript.'">Change Text</button>
+
+        <button id ="click">Internal Javascript Click</button>
+        <button id="changeBackground">Change Background Color</button>
+        <button id="changeToOriginal">Changing to original color</button>
+
+        <input type="color" id="Colorinput" value="#000000">
+        <button id="changeToInput">Change to the color entered</button>
+
+    <script>
+        
+        const buttonId = document.getElementById('click');
+
+        buttonId.onclick = function() {
+            alert("Button was clicked.")
+        }
+
+        buttonId.onmouseover = function() {
+            buttonId.style.color = "red";
+        }
+
+
+        buttonId.onmouseout = function() {
+            buttonId.style.color = "yellow";
+        }
+
+        const changeBackgroundButton = document.getElementById('changeBackground');
+        const target = ["orange"]; 
+
+        changeBackgroundButton.onclick = function() {
+            document.body.style.backgroundColor = target; 
+        }
+
+        const changeToOriginalColor = document.getElementById('changeToOriginal');
+        let originalColor = "green"
+
+        changeToOriginalColor.onclick = function() {
+            document.body.style.backgroundColor = originalColor;
+        }
+
+        const changeWithInput = document.getElementById('changeToInput')
+        const colorInput = document.getElementById('Colorinput')
+
+        changeWithInput.onclick = function() {
+            document.body.style.backgroundColor = colorInput.value;
+        }
+    </script>
+    </body>
+</html>
